@@ -4,6 +4,7 @@ import 'package:newsapplication/controller/category_controller.dart';
 import 'package:newsapplication/controller/home_screen_controller.dart';
 import 'package:newsapplication/controller/search_screen_controller.dart';
 import 'package:newsapplication/view/bottom_nav/mainScreen.dart';
+import 'package:newsapplication/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -18,6 +19,6 @@ class MyNewsapp extends StatelessWidget {
       ChangeNotifierProvider(create: (context) => SearchScreenController()),
       ChangeNotifierProvider(create: (context) => BottomNavController()),
       ChangeNotifierProvider(create: (context) => CategoryController())
-    ],child: MaterialApp(debugShowCheckedModeBanner: false,home: Main_Screen(),),);
+    ],child: MaterialApp(debugShowCheckedModeBanner: false,home: Newssplash(),),);
   }
 }

@@ -10,7 +10,7 @@ class Search_Screen extends StatelessWidget {
     TextEditingController tController = TextEditingController();
     SearchScreenController provider =
         Provider.of<SearchScreenController>(context);
-    return Scaffold(
+    return Scaffold(appBar: AppBar(backgroundColor: Colors.red,title: Text("Search",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),
       body: SafeArea(
         child: Column(
           children: [
