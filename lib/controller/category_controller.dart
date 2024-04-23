@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class CategoryController extends ChangeNotifier {
   List<String> categorylist = [
-    "Bussiness",
+    "Business",
     "Entertainment",
     "Genaral",
     "Health",
@@ -14,7 +14,7 @@ class CategoryController extends ChangeNotifier {
     "Sports",
     "Technology"
   ];
-  String category = "bussiness";
+  String category = "business";
 
   onTap({required index}) {
     category = categorylist[index].toLowerCase();

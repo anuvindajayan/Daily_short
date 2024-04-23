@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -10,7 +8,6 @@ class Newssplash extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _splash2state();
 }
-
 
 class _splash2state extends State<Newssplash> {
   @override
@@ -25,7 +22,10 @@ class _splash2state extends State<Newssplash> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(child: Lottie.asset("assets/animation/dailyshort_animation.json")),
+      body: Container(
+          child: Center(
+              child:
+                  Lottie.asset("assets/animation/dailyshort_animation.json"))),
     );
   }
 }

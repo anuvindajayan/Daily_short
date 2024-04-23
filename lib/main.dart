@@ -3,7 +3,6 @@ import 'package:newsapplication/controller/bottom_nav_control.dart';
 import 'package:newsapplication/controller/category_controller.dart';
 import 'package:newsapplication/controller/home_screen_controller.dart';
 import 'package:newsapplication/controller/search_screen_controller.dart';
-import 'package:newsapplication/view/bottom_nav/mainScreen.dart';
 import 'package:newsapplication/view/splash_screen.dart';
 import 'package:provider/provider.dart';
 

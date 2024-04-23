@@ -9,13 +9,15 @@ class Search_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController tController = TextEditingController();
     SearchScreenController provider =
-        Provider.of<SearchScreenController>(context);
-    return Scaffold(appBar: AppBar(backgroundColor: Colors.red,title: Text("Search",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),),
+    Provider.of<SearchScreenController>(context);
+    return Scaffold(appBar: AppBar(backgroundColor: Colors.red,
+      title: Text("Search",
+        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),),
       body: SafeArea(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 40.0,left: 10,right: 10),
+              padding: const EdgeInsets.only(top: 40.0, left: 10, right: 10),
               child: SearchBar(hintText: "Search",
                 controller: tController,
                 onSubmitted: (result) {
@@ -27,36 +29,41 @@ class Search_Screen extends StatelessWidget {
               builder: (context, SearchScreenController, child) {
                 return provider.isLoading == true
                     ? Center(
-                        child: LottieBuilder.asset(
-                          "assets/animation/Animation - 1706982397782.json",
-                          fit: BoxFit.cover,
-                          height: 150,
-                          width: 150,
-                        ),
-                      )
+                  child: LottieBuilder.asset(
+                    "assets/animation/Animation - 1706982397782.json",
+                    fit: BoxFit.cover,
+                    height: 150,
+                    width: 150,
+                  ),
+                )
                     : ListView.separated(
-                        itemBuilder: (context, index) => NewsCard(
+                    itemBuilder: (context, index) =>
+                        NewsCard(
                             title: SearchScreenController
-                                    .newsModal?.articles?[index].title ??
+                                .newsModal?.articles?[index].title ??
                                 "",
                             description: SearchScreenController
-                                    .newsModal?.articles?[index].description ??
+                                .newsModal?.articles?[index].description ??
                                 "",
                             date: SearchScreenController
                                 .newsModal?.articles?[index].publishedAt,
                             imageUrl: SearchScreenController
-                                    .newsModal?.articles?[index].urlToImage ??
+                                .newsModal?.articles?[index].urlToImage ??
                                 "",
                             contant: SearchScreenController
-                                    .newsModal?.articles?[index].content ??
+                                .newsModal?.articles?[index].content ??
                                 "",
                             sourceName:
-                                SearchScreenController.newsModal?.articles?[index].source.toString() ?? "",
-                            url: SearchScreenController.newsModal?.articles?[index].url ?? ""),
-                        separatorBuilder: (context, index) => Divider(
-                              height: 10,
-                            ),
-                        itemCount: SearchScreenController.newsModal?.articles?.length ?? 0);
+                            SearchScreenController.newsModal?.articles?[index]
+                                .source.toString() ?? "",
+                            url: SearchScreenController.newsModal
+                                ?.articles?[index].url ?? ""),
+                    separatorBuilder: (context, index) =>
+                        Divider(
+                          height: 10,
+                        ),
+                    itemCount: SearchScreenController.newsModal?.articles
+                        ?.length ?? 0);
               },
             ))
           ],
